@@ -2,9 +2,6 @@
 
 // Prevent redeclaring functions
 if (!function_exists('skincare_add_logo')) {
-    /**
-     * Enable support for a custom logo.
-     */
     function skincare_add_logo() {
         add_theme_support('custom-logo', [
             'height'      => 250,
@@ -30,8 +27,8 @@ if (!function_exists('skincare_customize_register')) {
             ]);
 
             $colors = [
-                'primary_color'   => ['label' => __('Primary Color', 'minimalist-theme'), 'default' => '#ff6600'],
-                'secondary_color' => ['label' => __('Secondary Color', 'minimalist-theme'), 'default' => '#0066ff'],
+                'primary_color'   => ['label' => __('Primary Color', 'minimalist-theme'), 'default' => '#4A4A4A'],
+                'secondary_color' => ['label' => __('Secondary Color', 'minimalist-theme'), 'default' => '#8A7358'],
             ];
 
             foreach ($colors as $color_id => $color) {
@@ -51,6 +48,23 @@ if (!function_exists('skincare_customize_register')) {
                 ));
             }
         }
+
+        // === Custom Banner Section ===
+        $wp_customize->add_section('custom_banner_section', [
+            'title'    => __('Custom Banner', 'minimalist-theme'),
+            'priority' => 25,
+        ]);
+
+        $wp_customize->add_setting('custom_banner_image', [
+            'default'   => '',
+            'sanitize_callback' => 'esc_url',
+        ]);
+
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_banner_image', [
+            'label'   => __('Upload Banner Image', 'minimalist-theme'),
+            'section' => 'custom_banner_section',
+            'settings' => 'custom_banner_image',
+        ]));
 
         // === Homepage Sections - Editable Titles ===
         $sections = [
@@ -119,18 +133,18 @@ if (!function_exists('skincare_customize_register')) {
             'type'    => 'textarea',
         ]);
 
-        // Image Upload
+        // Image Upload for About Us Page
         if (class_exists('WP_Customize_Image_Control')) {
             $wp_customize->add_setting('about_us_image', [
                 'sanitize_callback' => 'esc_url',
             ]);
             $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'about_us_image', [
-                'label'   => __('Upload Image', 'minimalist-theme'),
+                'label'   => __('Upload About Us Image', 'minimalist-theme'),
                 'section' => 'about_us_section',
             ]));
         }
 
-        // Video Embed URL
+        // Video Embed URL for About Us Page
         $wp_customize->add_setting('about_us_video', [
             'sanitize_callback' => 'esc_url',
         ]);
@@ -142,21 +156,4 @@ if (!function_exists('skincare_customize_register')) {
     }
 
     add_action('customize_register', 'skincare_customize_register');
-}
-
-/**
- * Outputs dynamic theme colors to the site's CSS.
- */
-if (!function_exists('skincare_customizer_css')) {
-    function skincare_customizer_css() {
-        ?>
-        <style>
-            :root {
-                --primary-color: <?php echo esc_attr(get_theme_mod('primary_color', '#ff6600')); ?>;
-                --secondary-color: <?php echo esc_attr(get_theme_mod('secondary_color', '#0066ff')); ?>;
-            }
-        </style>
-        <?php
-    }
-    add_action('wp_head', 'skincare_customizer_css');
 }

@@ -2,11 +2,32 @@
 :root {
     --primary-color: #4A4A4A; /* Dark Gray for Text */
     --secondary-color: #8A7358; /* Elegant Brown/Beige */
-    --background-color: #FAF8F6; /* Soft Cream Background */
+    --background-color: #EAEFF2; /* Soft Cream Background */
     --button-color: #8A7358;
     --text-color: #4A4A4A;
     --heading-font: "Courier Std", "Courier New", monospace;
     --body-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* ====== Button Styling ====== */
+.btn {
+    font-family: var(--body-font);
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 200;
+    
+    text-decoration: none;
+    color: #fff; /* White text */
+    background-color: var(--primary-color); /* Dark Gray */
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--primary-color);
 }
 
 a, a:visited {
@@ -531,22 +552,7 @@ p {
 }
 
 /* ====== Explore Section (Buttons) ====== */
-.explore-section .btn {
-    display: inline-block;
-    background: var(--button-color);
-    color: white;
-    padding: 12px 25px;
-    text-transform: uppercase;
-    font-weight: bold;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: 0.3s ease-in-out;
-    margin: 10px;
-}
 
-.explore-section .btn:hover {
-    background: black;
-}
 
 /* ====== Gallery Section ====== */
 .gallery-section img {
