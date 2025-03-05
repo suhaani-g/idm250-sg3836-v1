@@ -101,3 +101,6 @@ function skincare_add_favicon() {
     }
 }
 add_action('wp_head', 'skincare_add_favicon');
+
+
+require get_template_directory() . '/includes/theme-customize.php';
