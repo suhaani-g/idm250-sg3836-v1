@@ -93,44 +93,100 @@ if (!function_exists('skincare_customize_register')) {
             'priority' => 31,
         ]);
 
-        $wp_customize->add_setting('about_us_heading', [
-            'default'   => 'About Us',
+        // About Us - Main Fields
+        $about_fields = [
+            'about_us_heading'    => ['label' => __('Main Heading', 'minimalist-theme'), 'default' => 'About Us'],
+            'about_us_subheading' => ['label' => __('Subheading', 'minimalist-theme'), 'default' => 'Our mission is to create something amazing.'],
+            'about_us_content'    => ['label' => __('Main Content', 'minimalist-theme'), 'default' => 'We are passionate about what we do and dedicated to excellence.'],
+        ];
+
+        foreach ($about_fields as $field_id => $field) {
+            $wp_customize->add_setting($field_id, [
+                'default'           => $field['default'],
+                'sanitize_callback' => 'sanitize_text_field',
+            ]);
+
+            $wp_customize->add_control($field_id, [
+                'label'   => $field['label'],
+                'section' => 'about_us_section',
+                'type'    => 'text',
+            ]);
+        }
+
+        // === About Us - Team Members Section ===
+$wp_customize->add_section('about_us_team_section', [
+    'title'    => __('Meet Our Team', 'minimalist-theme'),
+    'priority' => 32,
+]);
+
+// Allow up to 6 team members
+for ($i = 1; $i <= 6; $i++) {
+    // Team Member Name
+    $wp_customize->add_setting("team_member_{$i}_name", [
+        'default'           => "Team Member {$i}",
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+    $wp_customize->add_control("team_member_{$i}_name", [
+        'label'   => __("Team Member {$i} Name", 'minimalist-theme'),
+        'section' => 'about_us_team_section',
+        'type'    => 'text',
+    ]);
+
+    // Team Member Image
+    $wp_customize->add_setting("team_member_{$i}_image", [
+        'default'           => '',
+        'sanitize_callback' => 'esc_url',
+    ]);
+    $wp_customize->add_control(new WP_Customize_Image_Control(
+        $wp_customize,
+        "team_member_{$i}_image",
+        [
+            'label'   => __("Team Member {$i} Image", 'minimalist-theme'),
+            'section' => 'about_us_team_section',
+            'settings' => "team_member_{$i}_image",
+        ]
+    ));
+}
+
+
+        $wp_customize->add_setting('values_heading', [
+            'default'           => 'Our Core Values',
             'sanitize_callback' => 'sanitize_text_field',
         ]);
-        $wp_customize->add_control('about_us_heading', [
-            'label'   => __('Main Heading', 'minimalist-theme'),
+        $wp_customize->add_control('values_heading', [
+            'label'   => __('Values Section Heading', 'minimalist-theme'),
             'section' => 'about_us_section',
             'type'    => 'text',
         ]);
 
-        $wp_customize->add_setting('about_us_subheading', [
-            'default'   => 'Our mission is to create something amazing.',
+        $wp_customize->add_setting('journey_heading', [
+            'default'           => 'Our Journey',
             'sanitize_callback' => 'sanitize_text_field',
         ]);
-        $wp_customize->add_control('about_us_subheading', [
-            'label'   => __('Subheading', 'minimalist-theme'),
+        $wp_customize->add_control('journey_heading', [
+            'label'   => __('Journey Section Heading', 'minimalist-theme'),
             'section' => 'about_us_section',
             'type'    => 'text',
         ]);
 
-        $wp_customize->add_setting('about_us_content', [
-            'default'   => 'We are passionate about what we do and dedicated to excellence.',
-            'sanitize_callback' => 'wp_kses_post',
-        ]);
-        $wp_customize->add_control('about_us_content', [
-            'label'   => __('Main Content', 'minimalist-theme'),
-            'section' => 'about_us_section',
-            'type'    => 'textarea',
-        ]);
-
-        $wp_customize->add_setting('about_us_team', [
-            'default'   => 'Our Team: John Doe, Jane Smith, Michael Brown',
+        $wp_customize->add_setting('testimonials_heading', [
+            'default'           => 'Customer Testimonials',
             'sanitize_callback' => 'sanitize_text_field',
         ]);
-        $wp_customize->add_control('about_us_team', [
-            'label'   => __('Team Members', 'minimalist-theme'),
+        $wp_customize->add_control('testimonials_heading', [
+            'label'   => __('Testimonials Section Heading', 'minimalist-theme'),
             'section' => 'about_us_section',
-            'type'    => 'textarea',
+            'type'    => 'text',
+        ]);
+
+        $wp_customize->add_setting('explore_heading', [
+            'default'           => 'Explore More',
+            'sanitize_callback' => 'sanitize_text_field',
+        ]);
+        $wp_customize->add_control('explore_heading', [
+            'label'   => __('Explore Section Heading', 'minimalist-theme'),
+            'section' => 'about_us_section',
+            'type'    => 'text',
         ]);
 
         // Image Upload for About Us Page

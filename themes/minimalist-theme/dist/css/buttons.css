@@ -1,0 +1,20 @@
+/* ====== Button Styling ====== */
+.btn {
+    font-family: var(--body-font);
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 200;
+    
+    text-decoration: none;
+    color: #fff; /* White text */
+    background-color: var(--primary-color); /* Dark Gray */
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}

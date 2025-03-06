@@ -1,0 +1,56 @@
+/* ======= Global Styles ======= */
+:root {
+    --primary-color: #4A4A4A; /* Dark Gray for Text */
+    --secondary-color: #8A7358; /* Elegant Brown/Beige */
+    --background-color: #EAEFF2; /* Soft Cream Background */
+    --button-color: #8A7358;
+    --text-color: #4A4A4A;
+    --heading-font: "Courier Std", "Courier New", monospace;
+    --body-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a, a:visited {
+    color: var(--text-color); 
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-color); 
+}
+
+a:active {
+    color: var(--primary-color);
+}
+/* ====== Headings (Courier Std Light + All Caps) ====== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--primary-color);
+}
+
+/* ====== Body Text (Helvetica Neue Light) ====== */
+body {
+    font-family: var(--body-font);
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    background: var(--background-color);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+body:not(.home) {
+    padding-top: 80px; 
+}

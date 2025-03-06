@@ -1,0 +1,101 @@
+/* ======= Header ======= */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 1000;
+    padding: 5px 10px; 
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 1.2em;
+    
+}
+
+.site-title {
+    align-items: flex-start;
+    font-size: 1em !important;
+    font-weight: 300;
+    
+
+}
+/* Transparent header only on the front page */
+.transparent-header {
+    background: transparent;
+    box-shadow: none;
+}
+
+/* When scrolling on the front page, apply white background */
+.scrolled .transparent-header {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure text is white when header is transparent */
+.transparent-header a {
+    color: white !important;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Change text color when scrolled */
+.scrolled .transparent-header a {
+    color: var(--text-color) !important;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    text-decoration: none;
+}
+
+.header__logo {
+    font-size: 1.2rem; 
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.nav-left, .nav-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    font-family: var(--heading-font);
+    text-transform: uppercase;
+    
+}
+
+/* Navigation Menu */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 15px; /* Reduce spacing between menu items */
+    padding: 0;
+}
+
+.nav-menu li {
+    display: inline-block;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 200;
+    font-size: 0.9rem; 
+    padding: 5px 10px; 
+    align-items: flex-start;
+}
+
+/* Reduce Hover Effect */
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
