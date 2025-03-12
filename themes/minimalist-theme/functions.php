@@ -85,37 +85,5 @@ require get_template_directory() . '/includes/theme-customize.php';
  * 4. Single Post
  * --------------------------- */
 
-function add_product_meta_boxes() {
-    add_meta_box(
-        'product_details',
-        'Product Details',
-        'render_product_details_box',
-        'products',
-        'normal',
-        'default'
-    );
-}
-add_action('add_meta_boxes', 'add_product_meta_boxes');
-
-function render_product_details_box($post) {
-    $price = get_post_meta($post->ID, '_product_price', true);
-    $ingredients = get_post_meta($post->ID, '_product_ingredients', true);
-    
-    ?>
-    <label for="product_price">Price ($)</label>
-    <input type="number" id="product_price" name="product_price" value="<?php echo esc_attr($price); ?>" />
-
-    <label for="product_ingredients">Ingredients</label>
-    <textarea id="product_ingredients" name="product_ingredients"><?php echo esc_textarea($ingredients); ?></textarea>
-    <?php
-}
-
-function save_product_meta($post_id) {
-    if (array_key_exists('product_price', $_POST)) {
-        update_post_meta($post_id, '_product_price', sanitize_text_field($_POST['product_price']));
-    }
-    if (array_key_exists('product_ingredients', $_POST)) {
-        update_post_meta($post_id, '_product_ingredients', sanitize_textarea_field($_POST['product_ingredients']));
-    }
-}
-add_action('save_post', 'save_product_meta');
+// Load Metaboxes
+require get_template_directory() . '/includes/metabox.php';
