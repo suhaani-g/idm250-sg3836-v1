@@ -65,31 +65,31 @@
     </section>
 
     <section class="testimonials-section container">
-        <h2><?php echo esc_html(get_theme_mod('testimonials_heading', 'Customer Testimonials')); ?></h2>
-        <table>
-            <tr>
-                <th><?php echo esc_html(get_theme_mod('testimonials_name_column', 'Name')); ?></th>
-                <th><?php echo esc_html(get_theme_mod('testimonials_review_column', 'Review')); ?></th>
-            </tr>
-            <?php if (have_rows('customer_testimonials')): ?>
-                <?php while (have_rows('customer_testimonials')): the_row(); ?>
-                    <tr>
-                        <td><?php echo esc_html(get_sub_field('customer_name')); ?></td>
-                        <td><?php echo esc_html(get_sub_field('customer_review')); ?></td>
-                    </tr>
-                <?php endwhile; ?>
-            <?php else: ?>
-                <tr>
-                    <td>Emily R.</td>
-                    <td>"Absolutely love the products! My skin has never felt better."</td>
-                </tr>
-                <tr>
-                    <td>Michael B.</td>
-                    <td>"Truly natural and effective skincare. Highly recommend!"</td>
-                </tr>
-            <?php endif; ?>
-        </table>
-    </section>
+    <h2><?php echo esc_html(get_theme_mod('testimonials_section_heading', 'Customer Testimonials')); ?></h2>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Review</th>
+        </tr>
+
+        <tr>
+            <td><?php echo esc_html(get_theme_mod('testimonial_1_name', 'Emily R.')); ?></td>
+            <td><?php echo esc_html(get_theme_mod('testimonial_1_review', 'Absolutely love the products! My skin has never felt better.')); ?></td>
+        </tr>
+
+        <tr>
+            <td><?php echo esc_html(get_theme_mod('testimonial_2_name', 'Michael B.')); ?></td>
+            <td><?php echo esc_html(get_theme_mod('testimonial_2_review', 'Truly natural and effective skincare. Highly recommend!')); ?></td>
+        </tr>
+
+        <tr>
+            <td><?php echo esc_html(get_theme_mod('testimonial_3_name', 'Samantha K.')); ?></td>
+            <td><?php echo esc_html(get_theme_mod('testimonial_3_review', 'Great experience with customer support and excellent products.')); ?></td>
+        </tr>
+    </table>
+</section>
+
 
     <section class="quote-section container">
         <h2><?php echo esc_html(get_theme_mod('quote_heading', 'Our Sustainability Commitment')); ?></h2>
@@ -115,17 +115,26 @@
     </section>
 
     <section class="gallery-section container">
-        <h2><?php echo esc_html(get_theme_mod('gallery_heading', 'Image Gallery')); ?></h2>
-        <figure>
-            <img src="<?php echo esc_url(get_theme_mod('about_us_image', 'https://via.placeholder.com/600x300')); ?>" alt="Skincare Image">
-            <figcaption><?php echo esc_html(get_theme_mod('gallery_caption', 'Our Natural Ingredients')); ?></figcaption>
-        </figure>
-    </section>
+    <h2><?php echo esc_html(get_theme_mod('gallery_heading', 'Image Gallery')); ?></h2>
 
-    <section class="video-section container">
-        <h2><?php echo esc_html(get_theme_mod('video_heading', 'Watch Our Story')); ?></h2>
+    <div class="gallery-container">
+        <?php for ($i = 1; $i <= 6; $i++): ?>
+            <?php $image_url = get_theme_mod("gallery_image_{$i}"); ?>
+            <?php if ($image_url): ?>
+                <figure class="gallery-item">
+                    <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr(get_theme_mod('gallery_caption', 'Gallery Image')); ?>">
+                    <figcaption><?php echo esc_html(get_theme_mod('gallery_caption', 'Our Natural Ingredients')); ?></figcaption>
+                </figure>
+            <?php endif; ?>
+        <?php endfor; ?>
+    </div>
+</section>
+
+<section class="video-section container">
+        <h2><?php echo esc_html(get_theme_mod('video_section_heading', 'Watch Our Story')); ?></h2>
         <iframe width="600" height="338" src="<?php echo esc_url(get_theme_mod('about_us_video', 'https://www.youtube.com/embed/dQw4w9WgXcQ')); ?>" frameborder="0" allowfullscreen></iframe>
     </section>
+
 </main>
 
 <?php get_footer(); ?>

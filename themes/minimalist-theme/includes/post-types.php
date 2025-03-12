@@ -9,34 +9,15 @@
  *
  * @return void
  */
-function register_skincare_post_types()
-{
-    $post_type_name = 'products';
-
+function register_products_cpt() {
     $args = [
-        'labels' => [
-            'name'               => 'Products',
-            'singular_name'      => 'Product',
-            'add_new'            => 'Add New Product',
-            'add_new_item'       => 'Add New Product',
-            'edit_item'          => 'Edit Product',
-            'new_item'           => 'New Product',
-            'view_item'          => 'View Product',
-            'search_items'       => 'Search Products',
-            'not_found'          => 'No Products found',
-            'not_found_in_trash' => 'No Products found in Trash',
-        ],
-        'public'        => true,            // Makes it accessible on the front and back end
-        'has_archive'   => true,            // Enables an archive page for products
-        'rewrite'       => ['slug' => 'products'], // URL slug for products
-        'supports'      => ['title', 'editor', 'thumbnail', 'excerpt'], // Enabled post features
-        'menu_position' => 5,                // Position in WP admin menu
-        'menu_icon'     => 'dashicons-cart', // Custom icon for the post type (shopping cart)
-        'show_in_rest'  => true,             // Enables Gutenberg support
-        //'taxonomies'  => ['product-categories'], // Uncomment if you add product categories
+        'label' => 'Products',
+        'public' => true,
+        'menu_icon' => 'dashicons-cart',
+        'supports' => ['title', 'editor', 'thumbnail'],
+        'has_archive' => true,
     ];
-
-    register_post_type($post_type_name, $args);
+    register_post_type('products', $args);
 }
+add_action('init', 'register_products_cpt');
 
-add_action('init', 'register_skincare_post_types');

@@ -30,6 +30,7 @@ function skincare_enqueue_assets() {
         'components' => 'dist/css/components.css',
         'responsive' => 'dist/css/responsive.css',
         'frontpage' => 'dist/css/front-page.css',
+        'single' => 'dist/css/single.css',
     ];
 
     // Enqueue each CSS file separately

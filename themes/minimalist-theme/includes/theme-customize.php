@@ -148,6 +148,69 @@ for ($i = 1; $i <= 6; $i++) {
     ));
 }
 
+// === Testimonial Row 1 ===
+$wp_customize->add_setting('testimonial_1_name', [
+    'default'           => 'Emily R.',
+    'sanitize_callback' => 'sanitize_text_field',
+]);
+$wp_customize->add_control('testimonial_1_name', [
+    'label'    => __('Testimonial 1 Name', 'minimalist-theme'),
+    'section'  => 'about_us_section',
+    'type'     => 'text',
+]);
+
+$wp_customize->add_setting('testimonial_1_review', [
+    'default'           => 'Absolutely love the products! My skin has never felt better.',
+    'sanitize_callback' => 'sanitize_textarea_field',
+]);
+$wp_customize->add_control('testimonial_1_review', [
+    'label'    => __('Testimonial 1 Review', 'minimalist-theme'),
+    'section'  => 'about_us_section',
+    'type'     => 'textarea',
+]);
+
+// === Testimonial Row 2 ===
+$wp_customize->add_setting('testimonial_2_name', [
+    'default'           => 'Michael B.',
+    'sanitize_callback' => 'sanitize_text_field',
+]);
+$wp_customize->add_control('testimonial_2_name', [
+    'label'    => __('Testimonial 2 Name', 'minimalist-theme'),
+    'section'  => 'about_us_section',
+    'type'     => 'text',
+]);
+
+$wp_customize->add_setting('testimonial_2_review', [
+    'default'           => 'Truly natural and effective skincare. Highly recommend!',
+    'sanitize_callback' => 'sanitize_textarea_field',
+]);
+$wp_customize->add_control('testimonial_2_review', [
+    'label'    => __('Testimonial 2 Review', 'minimalist-theme'),
+    'section'  => 'about_us_section',
+    'type'     => 'textarea',
+]);
+
+// === Testimonial Row 3 ===
+$wp_customize->add_setting('testimonial_3_name', [
+    'default'           => 'Samantha K.',
+    'sanitize_callback' => 'sanitize_text_field',
+]);
+$wp_customize->add_control('testimonial_3_name', [
+    'label'    => __('Testimonial 3 Name', 'minimalist-theme'),
+    'section'  => 'about_us_section',
+    'type'     => 'text',
+]);
+
+$wp_customize->add_setting('testimonial_3_review', [
+    'default'           => 'Great experience with customer support and excellent products.',
+    'sanitize_callback' => 'sanitize_textarea_field',
+]);
+$wp_customize->add_control('testimonial_3_review', [
+    'label'    => __('Testimonial 3 Review', 'minimalist-theme'),
+    'section'  => 'about_us_section',
+    'type'     => 'textarea',
+]);
+
 
         $wp_customize->add_setting('values_heading', [
             'default'           => 'Our Core Values',
@@ -189,16 +252,49 @@ for ($i = 1; $i <= 6; $i++) {
             'type'    => 'text',
         ]);
 
-        // Image Upload for About Us Page
-        if (class_exists('WP_Customize_Image_Control')) {
-            $wp_customize->add_setting('about_us_image', [
-                'sanitize_callback' => 'esc_url',
-            ]);
-            $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'about_us_image', [
-                'label'   => __('Upload About Us Image', 'minimalist-theme'),
-                'section' => 'about_us_section',
-            ]));
-        }
+     // === Gallery Section ===
+$wp_customize->add_section('gallery_section', [
+    'title'    => __('Image Gallery', 'minimalist-theme'),
+    'priority' => 34,
+]);
+
+// Gallery Heading
+$wp_customize->add_setting('gallery_heading', [
+    'default'           => 'Image Gallery',
+    'sanitize_callback' => 'sanitize_text_field',
+]);
+$wp_customize->add_control('gallery_heading', [
+    'label'   => __('Gallery Section Heading', 'minimalist-theme'),
+    'section' => 'gallery_section',
+    'type'    => 'text',
+]);
+
+// Gallery Caption (optional)
+$wp_customize->add_setting('gallery_caption', [
+    'default'           => 'Our Natural Ingredients',
+    'sanitize_callback' => 'sanitize_text_field',
+]);
+$wp_customize->add_control('gallery_caption', [
+    'label'   => __('Gallery Caption (optional)', 'minimalist-theme'),
+    'section' => 'gallery_section',
+    'type'    => 'text',
+]);
+
+// Gallery Images (up to 6 for now)
+for ($i = 1; $i <= 6; $i++) {
+    $wp_customize->add_setting("gallery_image_{$i}", [
+        'sanitize_callback' => 'esc_url',
+    ]);
+    $wp_customize->add_control(new WP_Customize_Image_Control(
+        $wp_customize,
+        "gallery_image_{$i}",
+        [
+            'label'   => __("Gallery Image {$i}", 'minimalist-theme'),
+            'section' => 'gallery_section',
+        ]
+    ));
+}
+
 
         // Video Embed URL for About Us Page
         $wp_customize->add_setting('about_us_video', [
