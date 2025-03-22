@@ -2,67 +2,38 @@
 /**
  * Front Page Template
  *
- * This controls the homepage layout of the Minimalist Skincare website.
+ * Displays the front page content and latest products for Minimalist Skincare.
  *
- *  WordPress uses `front-page.php` when:
- *   - "A static page" is selected as the homepage in **Settings > Reading**.
- *
- * Features:
- *   - Custom hero section for branding.
- *   - Featured products section.
- *   - Testimonials for social proof.
- *   - About the brand.
- *
- * @package MinimalistSkincare
+ * @package minimalist-theme
  */
 ?>
 
 <?php get_header(); ?>
 
-<?php get_template_part('components/custom-banner'); ?>
-
 <div class="wrapper">
-  <?php get_template_part('components/hero-home'); ?>
-  
 
-</div>
-
-<?php
-/**
- * Front Page Template
- *
- * Displays the front page content and the latest 3 products.
- *
- * @package minimalist-theme
- */
-
-get_header();
-?>
-
-<div class="wrapper">
+  <!-- Featured Image as Banner -->
+  <?php if ( has_post_thumbnail() ) : ?>
+    <div class="front-banner">
+      <?php the_post_thumbnail('full'); ?>
+    </div>
+  <?php endif; ?>
 
   <!-- Page Title from WordPress Editor -->
   <h1 class="page-header"><?php the_title(); ?></h1>
 
-  <!-- Featured Image from WordPress Editor -->
-  <?php if (has_post_thumbnail()) : ?>
-    <div class="featured-image">
-      <?php the_post_thumbnail(); ?>
-    </div>
-  <?php endif; ?>
-
   <!-- Page Content from WordPress Editor -->
   <div class="page-content">
     <?php
-    if (have_posts()) :
-      while (have_posts()) : the_post();
+    if ( have_posts() ) :
+      while ( have_posts() ) : the_post();
         the_content();
       endwhile;
     endif;
     ?>
   </div>
 
-  <!-- Simple Products Section -->
+  <!-- Products Section -->
   <section class="products">
     <h2>Our Products</h2>
 
@@ -73,13 +44,13 @@ get_header();
         'posts_per_page' => 3,
       ]);
 
-      if ($product_query->have_posts()) :
-        while ($product_query->have_posts()) : $product_query->the_post(); ?>
+      if ( $product_query->have_posts() ) :
+        while ( $product_query->have_posts() ) : $product_query->the_post(); ?>
 
           <div class="product-card">
             <a href="<?php the_permalink(); ?>">
 
-              <?php if (has_post_thumbnail()) : ?>
+              <?php if ( has_post_thumbnail() ) : ?>
                 <?php the_post_thumbnail('medium'); ?>
               <?php endif; ?>
 
@@ -96,8 +67,6 @@ get_header();
     </div>
   </section>
 
-</div>
-
-<?php get_footer(); ?>
+</div><!-- /.wrapper -->
 
 <?php get_footer(); ?>

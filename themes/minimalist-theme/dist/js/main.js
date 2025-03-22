@@ -13,3 +13,15 @@ document.addEventListener("DOMContentLoaded", function () {
     updateHeader(); 
 });
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav = document.getElementById('main-navigation');
+  
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('open');
+      mainNav.classList.toggle('active');
+    });
+  });
+  
+

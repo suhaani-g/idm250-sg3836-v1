@@ -4,82 +4,70 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 20%;
+    height: 170px;
     background: rgba(255, 255, 255, 0.9);
     z-index: 1000;
-    padding: 5px 10px; 
+    padding: 10px 20px;
     transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.logo a {
-    text-decoration: none;
-    font-size: 1.2em;
-    
-}
-
-.site-title {
-    align-items: flex-start;
-    font-size: 1em !important;
-    font-weight: 300;
-    
-
-}
-/* Transparent header only on the front page */
+/* Transparent header only on front page */
 .transparent-header {
     background: transparent;
     box-shadow: none;
 }
 
-/* When scrolling on the front page, apply white background */
 .scrolled .transparent-header {
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Ensure text is white when header is transparent */
 .transparent-header a {
     color: white !important;
     transition: color 0.3s ease-in-out;
 }
 
-/* Change text color when scrolled */
 .scrolled .transparent-header a {
     color: var(--text-color) !important;
 }
 
+/* ======= Header Container ======= */
 .header-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
+    align-items: center;
     max-width: 1200px;
-    padding: 0 20px;
-    text-decoration: none;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.header__logo {
-    font-size: 1.2rem; 
-    letter-spacing: 1px;
-    text-transform: uppercase;
+/* ======= Logo ======= */
+.logo a {
     text-decoration: none;
+    font-size: 1.2em;
+    color: var(--text-color);
 }
 
-.nav-left, .nav-right {
-    flex: 1;
+.site-title {
+    font-size: 1em !important;
+    font-weight: 300;
+}
+
+/* ======= Navigation ======= */
+.main-navigation {
     display: flex;
     justify-content: center;
-    font-family: var(--heading-font);
-    text-transform: uppercase;
-    
+    align-items: center;
 }
 
-/* Navigation Menu */
 .nav-menu {
     list-style: none;
     display: flex;
-    gap: 15px; /* Reduce spacing between menu items */
+    gap: 15px;
     padding: 0;
+    margin: 0;
 }
 
 .nav-menu li {
@@ -90,12 +78,85 @@
     text-decoration: none;
     color: var(--text-color);
     font-weight: 200;
-    font-size: 0.9rem; 
-    padding: 5px 10px; 
-    align-items: flex-start;
+    font-size: 0.9rem;
+    padding: 5px 10px;
 }
 
-/* Reduce Hover Effect */
 .nav-menu a:hover {
     color: var(--primary-color);
+}
+
+/* ======= Hamburger Toggle ======= */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+    background: none;
+    border: none;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--text-color);
+    border-radius: 2px;
+    transition: 0.3s ease;
+}
+
+/* Hamburger open state */
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ======= Mobile Styles ======= */
+@media (max-width: 768px) {
+    .main-navigation {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 70px; /* Adjust depending on header height */
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        transition: background 0.3s ease-in-out;
+    }
+
+    /* Transparent menu on front page when not open */
+    .transparent-header .main-navigation {
+        background: transparent;
+    }
+
+    /* White background when active */
+    .main-navigation.active {
+        display: flex;
+        background: rgba(255, 255, 255, 0.95);
+    }
+
+    /* Text colors */
+    .transparent-header .main-navigation .nav-menu a {
+        color: white !important;
+    }
+
+    .main-navigation.active .nav-menu a {
+        color: #333 !important;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
 }

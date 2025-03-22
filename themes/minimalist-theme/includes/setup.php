@@ -55,12 +55,12 @@ add_action('after_setup_theme', 'skincare_theme_setup');
  */
 function register_theme_menus() {
     register_nav_menus([
-        'left-menu'   => __('Left Menu', 'minimalist-theme'),
-        'right-menu'  => __('Right Menu', 'minimalist-theme'),
-        'footer-menu' => __('Footer Menu', 'minimalist-theme')
+        'primary-menu' => __('Primary Menu', 'minimalist-theme'),
+        'footer-menu'  => __('Footer Menu', 'minimalist-theme')
     ]);
 }
 add_action('init', 'register_theme_menus');
+
 
 /**
  * Enqueue theme styles and scripts.
@@ -87,6 +87,18 @@ function skincare_enqueue_assets() {
             filemtime(get_template_directory() . '/dist/css/global.css')
         );
     }
+
+    // Enqueue about template stylesheet ONLY on the About Template
+if ( is_page_template( 'templates/template-about.php' ) ) {
+    if ( file_exists( get_template_directory() . '/dist/css/template-about.css' ) ) {
+        wp_enqueue_style(
+            'skincare-template-about-style',
+            get_template_directory_uri() . '/dist/css/template-about.css',
+            [],
+            filemtime( get_template_directory() . '/dist/css/template-about.css' )
+        );
+    }
+}
 
     // Enqueue header stylesheet
     if (file_exists(get_template_directory() . '/dist/css/header.css')) {
@@ -178,15 +190,7 @@ function skincare_enqueue_assets() {
         );
     }
 
-    // Enqueue about template stylesheet
-    if (file_exists(get_template_directory() . '/dist/css/template-about.css')) {
-        wp_enqueue_style(
-            'skincare-template-about-style',
-            get_template_directory_uri() . '/dist/css/template-about.css',
-            [],
-            filemtime(get_template_directory() . '/dist/css/template-about.css')
-        );
-    }
+
 
     // Enqueue main.css as a fallback in case individual files are missing
     if (file_exists(get_template_directory() . '/dist/css/main.css')) {

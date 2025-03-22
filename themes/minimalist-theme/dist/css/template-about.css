@@ -1,25 +1,4 @@
-body {
-    background-color: #393939;
-    color: #f0f0f0;
-  }
-  
-  .sidebar {
-    background-color: #393939;
-  }
-  
-  .site-main {
-    background-color: #393939;
-  }
-  
-  .page-header {
-    color: #ffffff;
-  }
-  
-  a {
-    color: #8A7358;
-  }
-  
-  .page-header{
+.page-header{
     margin-top: 100px;
     margin-left: 200px;
 }
@@ -41,7 +20,7 @@ body {
     padding: 100px 50px;
     line-height: 1.6;
     font-family: 'Helvetica Neue', sans-serif;
-    color: #ffffff;
+    color: #333;
 }
   
   /* Headings */

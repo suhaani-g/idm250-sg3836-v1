@@ -1,3 +1,5 @@
+
+
 /* Sidebar */
 .wrapper.sidebar-layout {
     display: flex;
@@ -32,6 +34,7 @@
   .sidebar {
     flex: 1;
     margin-top: 100px; /* Push sidebar down */
+    font-family: 'Helvetica Neue', sans-serif;
   }
   
   .site-main {
@@ -39,17 +42,19 @@
   }
 
   .sidebar {
-    background-color: #1e1e1e; /* Dark background */
-    color: #f0f0f0; /* Light text */
+    background-color: #EAEFF2; 
+    color: #1e1e1e;; 
     padding: 20px;
   }
   
   /* Sidebar headings (like "Pages", "Categories") */
   .sidebar .widget-title,
   .sidebar h2 {
-    color: #ffffff;
+    color: #1e1e1e;;
     font-size: 1.2rem;
     margin-bottom: 15px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 400;
   }
   
   /* Sidebar links */

@@ -1,34 +1,32 @@
 <?php
-/*
-Template Name: Page with Sidebar
-*/
+/**
+ * Template Name: Custom Page with Sidebar
+ */
 get_header(); ?>
 
 <div class="wrapper sidebar-layout">
-
+  
   <main class="site-main">
-    <h1 class="page-header"><?php echo get_the_title(); ?></h1>
+    <header class="page-header">
+      <h1><?php echo get_the_title(); ?></h1>
+    </header>
 
-    <?php
-    if ( has_post_thumbnail() ) :
-      echo '<div class="featured-image">';
-      the_post_thumbnail();
-      echo '</div>';
-    endif;
-    ?>
+    <?php if ( has_post_thumbnail() ) : ?>
+      <div class="featured-image">
+        <?php the_post_thumbnail(); ?>
+      </div>
+    <?php endif; ?>
 
-    <div class="page-content">
-      <?php
-      while ( have_posts() ) :
-        the_post();
-        the_content();
-      endwhile;
-      ?>
+    <div class="main-content">
+      <?php get_template_part( 'components/content' ); ?>
     </div>
+    
   </main>
 
-  <?php get_sidebar(); // Include the sidebar.php ?>
+  <aside class="sidebar">
+    <?php get_sidebar(); ?>
+  </aside>
 
-</div>
+</div><!-- /.wrapper.sidebar-layout -->
 
 <?php get_footer(); ?>
