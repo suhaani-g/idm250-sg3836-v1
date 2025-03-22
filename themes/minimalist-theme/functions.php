@@ -47,8 +47,6 @@ require get_template_directory() . '/includes/theme-customize.php';
  * 4. Single Post
  * --------------------------- */
 
-// Load Metaboxes
-require get_template_directory() . '/includes/metabox.php';
 
 function minimalist_register_sidebar() {
     register_sidebar( array(

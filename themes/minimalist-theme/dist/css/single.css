@@ -1,163 +1,282 @@
-/* Product Layout Container */
-.product-layout {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px; 
-    margin-bottom: 80px; 
-    align-items: flex-start; 
-}
-
-/* Left Section: Details */
-.product-details-left {
-    flex: 1;
-    min-width: 300px;
-    text-align: left; 
-}
-
-.product-details-left > div {
-    margin-bottom: 50px; 
-}
-
-/* Right Section: Product Image */
-.product-image-right {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end; 
-    align-items: flex-start; 
-}
-
-.product-image-right img {
-    width: 100%;
-    max-height: 500px;
-    max-width: 400px; 
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-/* Heading Styles */
-.product-hero h1,
-.product-description h3,
-.product-best-for h3,
-.product-benefits h3,
-.product-ingredients h3 {
-    text-align: left;
-    margin-bottom: 15px;
-}
-
-/* Paragraph / List Spacing */
-.product-description p,
-.product-best-for p,
-.product-benefits ul,
-.product-ingredients ul {
-    margin-bottom: 20px;
-    font-size: 15px;
-}
-
-/* Benefits & Ingredients Lists */
-.product-benefits ul,
-.product-ingredients ul {
-    list-style: disc;
-    padding-left: 20px;
-}
-
-/* Product Quote Section */
-.product-quote {
-    margin: 80px 0; /* increased space above and below the quote */
+.single-product {
+    padding: 100px 20px;
+    max-width: 800px;
+    margin: 0 auto;
     text-align: center;
-}
-
-.product-quote blockquote {
-    font-size: 1.6rem;
+  }
+  
+  .product-title {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    
+    color: #111;
+    margin-bottom: 2rem;
+  }
+  
+  .product-featured-image {
+    margin-bottom: 3rem;
+  }
+  
+  .product-featured-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .product-content {
+    line-height: 1.6;
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #333;
+    text-align: left;
+  }
+  
+  .product-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+  }
+  
+  .product-content a {
+    color: #8A7358;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+  
+  .product-content a:hover {
+    color: #4A4A4A;
+  }
+  
+  .product-content h1,
+  .product-content h2,
+  .product-content h3,
+  .product-content h4,
+  .product-content h5,
+  .product-content h6 {
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #111;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .product-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .product-content h2 {
+    font-size: 2rem;
+  }
+  
+  .product-content h3 {
+    font-size: 1.75rem;
+  }
+  
+  .product-content h4 {
+    font-size: 1.5rem;
+  }
+  
+  .product-content h5 {
+    font-size: 1.25rem;
+  }
+  
+  .product-content h6 {
+    font-size: 1rem;
+  }
+  
+  .product-content ul,
+  .product-content ol {
+    margin: 1.5rem 0 1.5rem 2rem;
+  }
+  
+  .product-content ul li {
+    list-style-type: disc;
+    margin-bottom: 0.5rem;
+  }
+  
+  .product-content ol li {
+    list-style-type: decimal;
+    margin-bottom: 0.5rem;
+  }
+  
+  .product-content ul.checklist li {
+    list-style-type: none;
+    position: relative;
+    padding-left: 2rem;
+  }
+  
+  .product-content ul.checklist li::before {
+    content: "✔";
+    color: #8A7358;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  .product-content blockquote {
     font-style: italic;
-}
-
-/* Gallery Section */
-.gallery-section {
-    margin-bottom: 80px; /* more space below gallery */
-}
-
-.gallery-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding-bottom: 10px;
-}
-
-.gallery-item {
-    flex: 0 0 auto;
-    width: 280px;
-}
-
-.gallery-item img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.gallery-item figcaption {
+    color: #555;
+    border-left: 4px solid #8A7358;
+    padding-left: 1rem;
+    margin: 2rem 0;
+    background-color: #f9f9f9;
+    padding: 1rem;
+  }
+  
+  .product-content .wp-block-pullquote {
+    border-top: 4px solid #8A7358;
+    border-bottom: 4px solid #8A7358;
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  .product-content .wp-block-pullquote blockquote {
+    font-size: 1.5rem;
+    color: #333;
     text-align: center;
-    margin-top: 10px;
-    font-size: 0.9rem;
-}
-
-/* Video Section */
-.product-video {
-    margin-bottom: 80px;
-    margin-top: 80px;
-}
-
-.product-video h3 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.product-video .video-wrapper {
-    max-width: 600px;
-    margin: 0 auto; /* center video */
-}
-
-.product-video .video-wrapper iframe {
-    width: 100%;
-    height: 340px; /* makes video smaller */
-}
-
-/* Reviews Table Section */
-.product-reviews {
-    margin-bottom: 80px;
-}
-
-.product-reviews h3 {
-    margin-bottom: 20px;
-}
-
-.product-reviews table {
-    width: 100%;
+  }
+  
+  .product-content .wp-block-table table {
+    width: 50%;
     border-collapse: collapse;
-}
-
-.product-reviews th,
-.product-reviews td {
+    margin: 2rem auto;
+  }
+  
+  .product-content .wp-block-table table th,
+  .product-content .wp-block-table table td {
     border: 1px solid #ddd;
-    padding: 15px;
+    padding: 0.75rem;
     text-align: left;
-}
-
-/* Buttons Section */
-.product-buttons {
+  }
+  
+  .product-content .wp-block-table table th {
+    background-color: #f5f5f5;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .product-content figure {
+    margin: 2rem 0;
     text-align: center;
-    margin-top: 60px;
-    margin-bottom: 80px;
-}
-
-.product-buttons .btn {
-    display: inline-block;
-    margin: 10px;
-    padding: 15px 30px;
-    text-decoration: none;
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: 5px;
-}
-
-.product-buttons .btn-secondary {
-    background-color: var(--secondary-color);
-}
+  }
+  
+  .product-content figcaption {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 0.5rem;
+  }
+  
+  .product-content .wp-block-embed {
+    margin: 2rem 0;
+  }
+  
+  .product-content iframe {
+    max-width: 100%;
+  }
+  
+  .product-content img {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .product-content .wp-block-gallery.has-nested-images {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1rem;
+    list-style: none;
+    margin: 0;
+  }
+  
+  .product-content .wp-block-gallery.has-nested-images::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .product-content .blocks-gallery-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 300px;
+  }
+  
+  .product-content .blocks-gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 1024px) {
+    .single-product {
+      padding: 60px 20px;
+    }
+  
+    .product-title {
+      font-size: 2rem;
+    }
+  
+    .product-featured-image img {
+      max-width: 400px;
+    }
+  
+    .product-content h1 {
+      font-size: 2rem;
+    }
+  
+    .product-content .wp-block-table table {
+      width: 70%;
+    }
+  
+    .product-content img {
+      max-width: 250px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .single-product {
+      padding: 40px 20px;
+    }
+  
+    .product-title {
+      font-size: 1.75rem;
+    }
+  
+    .product-featured-image img {
+      max-width: 100%;
+    }
+  
+    .product-content p {
+      font-size: 0.9rem;
+    }
+  
+    .product-content h2 {
+      font-size: 1.5rem;
+    }
+  
+    .product-content h3 {
+      font-size: 1.25rem;
+    }
+  
+    .product-content .wp-block-table table {
+      width: 100%;
+    }
+  
+    .product-content img {
+      max-width: 100%;
+    }
+  
+    .product-content .wp-block-gallery.has-nested-images {
+      gap: 0.5rem;
+    }
+  }
+  

@@ -21,7 +21,7 @@
                             </div>
                         <?php endif; ?>
                         <h2 class="archive-title"><?php the_title(); ?></h2>
-                        <p class="archive-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 15); ?></p>
+                        
                     </a>
                 </article>
             <?php endwhile; ?>
