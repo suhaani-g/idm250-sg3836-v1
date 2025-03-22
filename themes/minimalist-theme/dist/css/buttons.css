@@ -1,20 +1,26 @@
-/* ====== Button Styling ====== */
-.btn {
-    font-family: var(--body-font);
+  /* Buttons  */
+  .main-content .wp-block-button__link {
     display: inline-block;
+    background-color: #4A4A4A;
+    color:#fff;
     padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: 200;
-    
+    border-radius: 4px;
     text-decoration: none;
-    color: #fff; /* White text */
-    background-color: var(--primary-color); /* Dark Gray */
-    border: 1px solid var(--primary-color);
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
+    transition: background-color 0.3s ease;
+  }
+  
+  .main-content .wp-block-button__link:hover {
+    border: 1px solid #333; 
+    color: #333;
+    background: transparent;
+  }
+
+  .wp-block-buttons.aligncenter {
+    display: flex;
+    justify-content: center;
 }
 
-.btn:hover {
-    background-color: transparent;
-    color: var(--primary-color);
+.wp-block-buttons {
+    display: flex;
+    justify-content: center;
 }

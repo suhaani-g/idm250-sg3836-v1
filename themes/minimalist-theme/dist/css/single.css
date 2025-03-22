@@ -2,34 +2,34 @@
 .product-layout {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px; /* spacing between left and right */
-    margin-bottom: 80px; /* more space below the product */
-    align-items: flex-start; /* make sure top aligns */
+    gap: 40px; 
+    margin-bottom: 80px; 
+    align-items: flex-start; 
 }
 
 /* Left Section: Details */
 .product-details-left {
     flex: 1;
     min-width: 300px;
-    text-align: left; /* aligns all text to the left */
+    text-align: left; 
 }
 
 .product-details-left > div {
-    margin-bottom: 50px; /* spacing between each section on the left */
+    margin-bottom: 50px; 
 }
 
 /* Right Section: Product Image */
 .product-image-right {
     flex: 1;
     display: flex;
-    justify-content: flex-end; /* push image to the right */
-    align-items: flex-start; /* top align image */
+    justify-content: flex-end; 
+    align-items: flex-start; 
 }
 
 .product-image-right img {
     width: 100%;
     max-height: 500px;
-    max-width: 400px; /* make image smaller */
+    max-width: 400px; 
     object-fit: cover;
     border-radius: 10px;
 }

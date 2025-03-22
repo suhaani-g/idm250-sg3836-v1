@@ -1,0 +1,48 @@
+.archive-page {
+    padding: 60px 20px;
+}
+
+.archive-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.archive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.archive-item {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.archive-item:hover {
+    transform: translateY(-5px);
+}
+
+.archive-thumbnail img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.archive-title {
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+
+.archive-excerpt {
+    color: #666;
+    font-size: 1rem;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 40px;
+}

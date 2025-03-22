@@ -54,3 +54,31 @@ body {
 body:not(.home) {
     padding-top: 80px; 
 }
+
+
+/* Block Column Layout */
+.wp-block-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    flex: 1;
+    min-width: 600px;
+}
+
+.wp-block-group img {
+    width: 200px;
+    
+}
+ /* General Layout */ 
+.main-content {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+/* Add default spacing between all blocks */
+.main-content > * + * {
+    margin-top: 1rem;
+}
+
+

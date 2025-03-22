@@ -1,17 +1,40 @@
 <?php get_header(); ?>
 
-<main class="container">
-    <h1><?php the_archive_title(); ?></h1>
-    <div class="post-listing">
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            <article class="post-item">
-                <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                <p><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
-            </article>
-        <?php endwhile; else : ?>
-            <p>No posts found.</p>
+<main class="archive-page container">
+    <header class="archive-header">
+        <h1><?php post_type_archive_title(); ?></h1>
+        <?php if (category_description()) : ?>
+            <div class="archive-description">
+                <?php echo category_description(); ?>
+            </div>
         <?php endif; ?>
-    </div>
+    </header>
+
+    <?php if (have_posts()) : ?>
+        <div class="archive-grid">
+            <?php while (have_posts()) : the_post(); ?>
+                <article class="archive-item">
+                    <a href="<?php the_permalink(); ?>">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <div class="archive-thumbnail">
+                                <?php the_post_thumbnail('medium'); ?>
+                            </div>
+                        <?php endif; ?>
+                        <h2 class="archive-title"><?php the_title(); ?></h2>
+                        <p class="archive-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 15); ?></p>
+                    </a>
+                </article>
+            <?php endwhile; ?>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <?php the_posts_pagination(); ?>
+        </div>
+
+    <?php else : ?>
+        <p>No products found.</p>
+    <?php endif; ?>
 </main>
 
 <?php get_footer(); ?>

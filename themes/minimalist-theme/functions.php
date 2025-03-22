@@ -25,45 +25,7 @@ foreach ($includes as $file) {
     }
 }
 
-/* ---------------------------
- * 2. Register Theme Features
- * ---------------------------
- * Enables important WordPress features.
- */
-function skincare_theme_setup() {
-    // Enable support for dynamic title tags
-    add_theme_support('title-tag');
 
-    // Enable featured images (post thumbnails)
-    add_theme_support('post-thumbnails');
-
-    // Register navigation menus
-    register_nav_menus([
-        'left-menu' => __('Left Menu', 'minimalist-theme'),
-        'right-menu' => __('Right Menu', 'minimalist-theme'),
-        'footer-menu' => __('Footer Menu', 'minimalist-theme')
-    ]);
-
-    // Enable custom logo support
-    add_theme_support('custom-logo', [
-        'height' => 250,
-        'width' => 250,
-        'flex-width' => true,
-        'flex-height' => true,
-    ]);
-}
-add_action('after_setup_theme', 'skincare_theme_setup');
-
-/* ---------------------------
- * 3. Disable WordPress Admin Bar for Non-Admins
- * ---------------------------
- */
-function skincare_disable_admin_bar() {
-    if (!current_user_can('administrator') && !is_admin()) {
-        show_admin_bar(false);
-    }
-}
-add_action('after_setup_theme', 'skincare_disable_admin_bar');
 
 /* ---------------------------
  * 4. Ensure Favicon is Loaded
