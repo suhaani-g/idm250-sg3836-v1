@@ -62,8 +62,8 @@ get_header(); ?>
 
         <?php wp_reset_postdata(); ?>
 
-    </div><!-- /.archive-grid -->
+    </div>
 
-</div><!-- /.archive-page -->
+</div>
 
 <?php get_footer(); ?>

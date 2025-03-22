@@ -40,7 +40,7 @@
     <nav class="main-navigation" id="main-navigation">
       <?php
       wp_nav_menu([
-        'theme_location' => 'primary-menu', // You can register this in functions.php
+        'theme_location' => 'primary-menu', 
         'menu_class'     => 'nav-menu',
         'container'      => 'ul',
         'fallback_cb'    => false

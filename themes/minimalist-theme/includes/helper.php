@@ -41,8 +41,7 @@ function get_skincare_menu($menu_name)
  *
  * Checks if the specified post has a featured image and retrieves its full-size image URL and alt text.
  *
- * @param int $post_id The ID of the post to retrieve the featured image for.
- * @return array|bool Returns an array with 'url' and 'alt' keys if an image exists, otherwise false.
+ * 
  */
 function get_featured_product_image($post_id)
 {
@@ -67,7 +66,6 @@ function get_featured_product_image($post_id)
  *
  * This function constructs the full URL of the current page, including HTTPS if applicable.
  *
- * @return string The full URL of the current page.
  */
 function get_current_page_url()
 {
@@ -80,9 +78,6 @@ function get_current_page_url()
  *
  * This function returns a shortened version of the post content.
  *
- * @param int $post_id The ID of the post to retrieve the excerpt for.
- * @param int $length Number of words for the excerpt (default: 20).
- * @return string The trimmed excerpt with a "Read more" link.
  */
 function get_short_excerpt($post_id, $length = 20)
 {

@@ -35,7 +35,7 @@ get_header(); ?>
         <?php
         echo get_the_term_list(
           get_the_ID(),
-          'product_category', // replace with your taxonomy slug if different
+          'product_category', 
           '',
           ', ',
           ''

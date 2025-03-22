@@ -67,6 +67,6 @@
     </div>
   </section>
 
-</div><!-- /.wrapper -->
+</div>
 
 <?php get_footer(); ?>

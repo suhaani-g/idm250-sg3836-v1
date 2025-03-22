@@ -76,6 +76,7 @@ body:not(.home) {
     color: #333;
     line-height: 1.6;
 }
+
 /* Add default spacing between all blocks */
 .main-content > * + * {
     margin-top: 1rem;
@@ -90,23 +91,22 @@ body:not(.home) {
 .wrapper.sidebar-layout {
     display: flex;
     gap: 40px; /* space between content and sidebar */
-  }
-  
-  .site-main {
+}
+
+.site-main {
     flex: 3;
-  }
-  
-  .sidebar {
+}
+
+.sidebar {
     flex: 1;
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .wrapper.sidebar-layout {
-      flex-direction: column;
+        flex-direction: column;
     }
-  
+
     .sidebar {
-      width: 100%;
+        width: 100%;
     }
-  }
-  
+}

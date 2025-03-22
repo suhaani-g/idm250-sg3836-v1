@@ -22,7 +22,7 @@
     font-family: 'Helvetica Neue', sans-serif;
     color: #333;
 }
-  
+
   /* Headings */
 .main-content h1,
 .main-content h2,
@@ -36,86 +36,86 @@ margin-top: 2rem;
 margin-bottom: 1rem;
 font-weight: 600;
 }
-  
+
 .main-content h1 {
     font-size: 2.5rem;
 }
-  
-  .main-content h2 {
+
+.main-content h2 {
     font-size: 2rem;
-  }
-  
-  .main-content h3 {
+}
+
+.main-content h3 {
     font-size: 1.75rem;
-  }
-  
-  .main-content h4 {
+}
+
+.main-content h4 {
     font-size: 1.5rem;
-  }
-  
-  .main-content h5 {
+}
+
+.main-content h5 {
     font-size: 1.25rem;
-  }
-  
-  .main-content h6 {
+}
+
+.main-content h6 {
     font-size: 1rem;
-  }
-  
+}
+
   /* Paragraphs */
-  .main-content p {
+.main-content p {
     font-size: 1rem;
     margin-bottom: 1.5rem;
     color: #555;
     padding: 0px 50px;
-  }
-  
+}
+
   /* Links */
-  .main-content a {
+.main-content a {
     color: #8A7358;
     text-decoration: underline;
     transition: color 0.3s ease;
-  }
-  
-  .main-content a:hover {
-    color: #4A4A4A;
-  }
-  
+}
 
-  
+.main-content a:hover {
+    color: #4A4A4A;
+}
+
+
+
   /* Lists */
-  .main-content ul,
-  .main-content ol {
+.main-content ul,
+.main-content ol {
     margin: 1.5rem 0 1.5rem 2rem;
-  }
-  
-  .main-content ul li {
+}
+
+.main-content ul li {
     list-style-type: disc;
     margin-bottom: 0.5rem;
-  }
-  
-  .main-content ol li {
+}
+
+.main-content ol li {
     list-style-type: decimal;
     margin-bottom: 0.5rem;
-  }
-  
+}
+
   /* Check List (assumes you use wp-block-list with check icon) */
-  .main-content ul.checklist li {
+.main-content ul.checklist li {
     list-style-type: none;
     position: relative;
     padding-left: 2rem;
-  }
-  
-  .main-content ul.checklist li::before {
+}
+
+.main-content ul.checklist li::before {
     content: "✔";
     color: #8A7358;
     font-weight: bold;
     position: absolute;
     left: 0;
     top: 0;
-  }
-  
+}
+
   /* Block Quotes */
-  .main-content blockquote {
+.main-content blockquote {
     font-style: italic;
     color: #555;
     border-left: 4px solid #8A7358;
@@ -123,24 +123,24 @@ font-weight: 600;
     margin: 2rem 0;
     background-color: #f9f9f9;
     padding: 1rem;
-  }
-  
+}
+
   /* Pull Quotes */
-  .main-content .wp-block-pullquote {
+.main-content .wp-block-pullquote {
     border-top: 4px solid #8A7358;
     border-bottom: 4px solid #8A7358;
     margin: 2rem 0;
     padding: 2rem;
     background-color: #f9f9f9;
-  }
-  
-  .main-content .wp-block-pullquote blockquote {
+}
+
+.main-content .wp-block-pullquote blockquote {
     font-size: 1.5rem;
     color: #333;
     text-align: center;
-  }
-  
-  ul.wp-block-list, ol.wp-block-list {
+}
+
+ul.wp-block-list, ol.wp-block-list {
     display: table;
     margin: 0 auto; 
     text-align: left; 
@@ -148,56 +148,56 @@ font-weight: 600;
 
 
   /* Tables */
-  .wp-block-table table {
+.wp-block-table table {
     width: 50%;
     border-collapse: collapse;
     margin-bottom: 2rem;
     margin: 0 50px;
-  }
-  
-  .wp-block-table table th,
-  .wp-block-table table td {
+}
+
+.wp-block-table table th,
+.wp-block-table table td {
     border: 1px solid #ddd;
     padding: 0.75rem;
     text-align: left;
-  }
-  
-  .wp-block-table table th {
+}
+
+.wp-block-table table th {
     background-color: #f5f5f5;
     color: #333;
     font-weight: bold;
-  }
-  
+}
+
 
 
   /* Images with Captions */
-  .main-content figure {
+.main-content figure {
     margin: 2rem 0;
     text-align: center;
-  }
-  
-  .main-content figcaption {
+}
+
+.main-content figcaption {
     font-size: 0.9rem;
     color: #888;
     margin-top: 0.5rem;
-  }
-  
+}
+
   /* Videos (Embeds) */
-  .main-content .wp-block-embed {
+.main-content .wp-block-embed {
     margin: 2rem 0;
-  }
-  
-  .main-content iframe {
+}
+
+.main-content iframe {
     max-width: 100%;
-  }
-  
+}
+
   /* Responsive Images */
-  .main-content img {
+.main-content img {
     max-width: 300px;
     height: auto;
     display: block;
     margin: 0 auto;
-  }
+}
 
  /* Gallery container - make it horizontal */
 .wp-block-gallery.has-nested-images {
@@ -208,140 +208,138 @@ font-weight: 600;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 1rem;
-    list-style: none; /* remove list styling */
+    list-style: none; 
     margin: 0;
-  }
-  
+}
+
   /* Optional: Hide scrollbar */
-  .wp-block-gallery.has-nested-images::-webkit-scrollbar {
+.wp-block-gallery.has-nested-images::-webkit-scrollbar {
     display: none;
-  }
-  
+}
+
   /* Each gallery item */
-  .blocks-gallery-item {
+.blocks-gallery-item {
     flex: 0 0 auto; /* don't shrink or stretch */
     scroll-snap-align: start;
     width: 300px; /* set a consistent width */
-  }
-  
+}
+
   /* Images inside gallery */
-  .blocks-gallery-item img {
+.blocks-gallery-item img {
     width: 100%;
     height: auto;
     object-fit: cover;
     border-radius: 8px; /* optional, can remove */
-  }
-  
-  
-/* Base Styles (Your Original Code) */
-/* ... everything you posted ... */
+}
+
+
+
 
 /* ===================================== */
-/* ✅ Responsive Styles for Tablets */
+/* Responsive Styles for Tablets */
 @media (max-width: 1024px) {
-  
+
     .page-header {
-      margin-top: 60px;
-      margin-left: 100px; /* reduce left margin */
-    }
-  
-    .wp-block-column {
-      padding: 0 20px;
-    }
-  
-    .container,
-    .main-content {
-      padding: 60px 30px;
-    }
-  
-    .main-content h1 {
-      font-size: 2rem;
-    }
-  
-    .main-content h2 {
-      font-size: 1.75rem;
-    }
-  
-    .main-content p {
-      padding: 0 20px;
-    }
-  
-    .wp-block-table table {
-      width: 70%;
-      margin: 0 auto;
-    }
-  
-    .blocks-gallery-item {
-      width: 250px;
-    }
-  
-    .main-content img {
-      max-width: 250px;
-    }
-  
-  }
-  
-  /* ===================================== */
-  /* ✅ Responsive Styles for Mobile Devices */
-  @media (max-width: 768px) {
-  
-    .page-header {
-      margin-top: 40px;
-      margin-left: 20px;
-      font-size: 1.5rem;
-      text-align: center; /* optional */
-    }
-  
-    .wp-block-column {
-      padding: 0 10px;
-      width: 100%;
-    }
-  
-    .container,
-    .main-content {
-      padding: 40px 20px;
-    }
-  
-    .main-content h1 {
-      font-size: 1.75rem;
-    }
-  
-    .main-content h2 {
-      font-size: 1.5rem;
-    }
-  
-    .main-content h3 {
-      font-size: 1.25rem;
-    }
-  
-    .main-content p {
-      font-size: 0.9rem;
-      padding: 0;
-    }
-  
-    ul.wp-block-list,
-    ol.wp-block-list {
-      margin-left: 1rem;
-      margin-right: 1rem;
-    }
-  
-    .wp-block-table table {
-      width: 100%;
-      margin: 0 auto;
-    }
-  
-    .blocks-gallery-item {
-      width: 200px;
-    }
-  
-    .main-content img {
-      max-width: 100%;
+        margin-top: 60px;
+        margin-left: 100px; 
     }
 
-    /* Optional: make gallery scroll horizontally with touch */
-    .wp-block-gallery.has-nested-images {
-      gap: 0.5rem;
+    .wp-block-column {
+        padding: 0 20px;
     }
-  
-  }
-  
+
+    .container,
+    .main-content {
+        padding: 60px 30px;
+    }
+
+    .main-content h1 {
+        font-size: 2rem;
+    }
+
+    .main-content h2 {
+        font-size: 1.75rem;
+    }
+
+    .main-content p {
+        padding: 0 20px;
+    }
+
+    .wp-block-table table {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .blocks-gallery-item {
+        width: 250px;
+    }
+
+    .main-content img {
+        max-width: 250px;
+    }
+
+}
+
+  /* ===================================== */
+  /*  Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+
+    .page-header {
+        margin-top: 40px;
+        margin-left: 20px;
+        font-size: 1.5rem;
+        text-align: center; 
+    }
+
+    .wp-block-column {
+        padding: 0 10px;
+        width: 100%;
+    }
+
+    .container,
+    .main-content {
+        padding: 40px 20px;
+    }
+
+    .main-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .main-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .main-content h3 {
+        font-size: 1.25rem;
+    }
+
+    .main-content p {
+        font-size: 0.9rem;
+        padding: 0;
+    }
+
+    ul.wp-block-list,
+    ol.wp-block-list {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .wp-block-table table {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .blocks-gallery-item {
+        width: 200px;
+    }
+
+    .main-content img {
+        max-width: 100%;
+    }
+
+    
+    .wp-block-gallery.has-nested-images {
+        gap: 0.5rem;
+    }
+
+}

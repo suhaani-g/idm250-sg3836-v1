@@ -27,6 +27,6 @@ get_header(); ?>
     <?php get_sidebar(); ?>
   </aside>
 
-</div><!-- /.wrapper.sidebar-layout -->
+</div>
 
 <?php get_footer(); ?>

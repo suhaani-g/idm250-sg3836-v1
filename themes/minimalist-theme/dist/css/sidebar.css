@@ -3,77 +3,76 @@
 /* Sidebar */
 .wrapper.sidebar-layout {
     display: flex;
-    gap: 40px; /* space between content and sidebar */
-  }
-  
-  .site-main {
+    gap: 40px; 
+}
+
+.site-main {
     flex: 3;
-  }
-  
-  .sidebar {
+}
+
+.sidebar {
     flex: 1;
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .wrapper.sidebar-layout {
-      flex-direction: column;
+        flex-direction: column;
     }
-  
+
     .sidebar {
-      width: 100%;
+        width: 100%;
     }
-  }
+}
 
   /* Sidebar layout for sidebar page template */
 .wrapper.sidebar-layout {
     display: flex;
-    flex-direction: row-reverse; /* Sidebar on the left */
+    flex-direction: row-reverse; 
     gap: 40px;
-  }
-  
-  .sidebar {
+}
+
+.sidebar {
     flex: 1;
     margin-top: 100px; /* Push sidebar down */
     font-family: 'Helvetica Neue', sans-serif;
-  }
-  
-  .site-main {
-    flex: 3;
-  }
+}
 
-  .sidebar {
+.site-main {
+    flex: 3;
+}
+
+.sidebar {
     background-color: #EAEFF2; 
     color: #1e1e1e;; 
     padding: 20px;
-  }
-  
-  /* Sidebar headings (like "Pages", "Categories") */
-  .sidebar .widget-title,
-  .sidebar h2 {
+}
+
+  /* Sidebar headings */
+.sidebar .widget-title,
+.sidebar h2 {
     color: #1e1e1e;;
     font-size: 1.2rem;
     margin-bottom: 15px;
     font-family: 'Helvetica Neue', sans-serif;
     font-weight: 400;
-  }
-  
+}
+
   /* Sidebar links */
-  .sidebar a {
+.sidebar a {
     color: #e0b77d;
     text-decoration: none;
-  }
-  
-  .sidebar a:hover {
+}
+
+.sidebar a:hover {
     color: #f0f0f0;
-  }
-  
-  /* Remove bullets (optional) */
-  .sidebar ul {
+}
+
+  /* Remove bullets */
+.sidebar ul {
     list-style: none;
     padding-left: 0;
-  }
-  
-  .sidebar ul li {
+}
+
+.sidebar ul li {
     margin-bottom: 10px;
-  }
-  
+}

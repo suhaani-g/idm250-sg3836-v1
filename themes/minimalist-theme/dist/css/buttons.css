@@ -1,5 +1,5 @@
-  /* Buttons  */
-  .main-content .wp-block-button__link {
+/* Buttons  */
+.main-content .wp-block-button__link {
     display: inline-block;
     background-color: #4A4A4A;
     color:#fff;
@@ -7,15 +7,15 @@
     border-radius: 4px;
     text-decoration: none;
     transition: background-color 0.3s ease;
-  }
-  
-  .main-content .wp-block-button__link:hover {
+}
+
+.main-content .wp-block-button__link:hover {
     border: 1px solid #333; 
     color: #333;
     background: transparent;
-  }
+}
 
-  .wp-block-buttons.aligncenter {
+.wp-block-buttons.aligncenter {
     display: flex;
     justify-content: center;
 }

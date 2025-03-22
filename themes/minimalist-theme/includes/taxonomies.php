@@ -62,7 +62,7 @@ function register_product_category_taxonomy()
             'new_item_name'     => 'New Product Category Name',
             'menu_name'         => 'Categories',
         ],
-        'hierarchical'      => true, // Acts like categories (true); false makes it like tags.
+        'hierarchical'      => true, 
         'show_ui'           => true,
         'show_admin_column' => true,
         'query_var'         => true,
