@@ -82,3 +82,31 @@ body:not(.home) {
 }
 
 
+.page-header h1 {
+    margin-top: 100px;
+}
+
+/* Sidebar */
+.wrapper.sidebar-layout {
+    display: flex;
+    gap: 40px; /* space between content and sidebar */
+  }
+  
+  .site-main {
+    flex: 3;
+  }
+  
+  .sidebar {
+    flex: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .wrapper.sidebar-layout {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+    }
+  }
+  

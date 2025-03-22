@@ -49,3 +49,16 @@ require get_template_directory() . '/includes/theme-customize.php';
 
 // Load Metaboxes
 require get_template_directory() . '/includes/metabox.php';
+
+function minimalist_register_sidebar() {
+    register_sidebar( array(
+        'name'          => __( 'Sidebar', 'minimalist-theme' ),
+        'id'            => 'sidebar-1',
+        'description'   => __( 'Add widgets here.', 'minimalist-theme' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+}
+add_action( 'widgets_init', 'minimalist_register_sidebar' );

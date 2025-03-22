@@ -1,44 +1,33 @@
 <?php
-/**
- * Template Name: About Page with Sidebar
- *
- * A custom About Page template that includes a sidebar.
- *
- * @package minimalist-theme
- */
+/*
+Template Name: Page with Sidebar
+*/
+get_header(); ?>
 
-get_header();
-?>
+<div class="wrapper sidebar-layout">
 
-<div class="wrapper about-page-with-sidebar">
+  <main class="site-main">
+    <h1 class="page-header"><?php echo get_the_title(); ?></h1>
 
-  <div class="content-area">
-    <h1 class="page-header"><?php the_title(); ?></h1>
-
-    <?php if (has_post_thumbnail()) : ?>
-      <div class="featured-image">
-        <?php the_post_thumbnail(); ?>
-      </div>
-    <?php endif; ?>
+    <?php
+    if ( has_post_thumbnail() ) :
+      echo '<div class="featured-image">';
+      the_post_thumbnail();
+      echo '</div>';
+    endif;
+    ?>
 
     <div class="page-content">
       <?php
-      if (have_posts()) :
-        while (have_posts()) : the_post();
-          the_content(); // Content from the WordPress editor
-        endwhile;
-      endif;
+      while ( have_posts() ) :
+        the_post();
+        the_content();
+      endwhile;
       ?>
     </div>
-  </div>
+  </main>
 
-  <aside class="sidebar-area">
-    <?php if (is_active_sidebar('primary-sidebar')) : ?>
-      <?php dynamic_sidebar('primary-sidebar'); ?>
-    <?php else : ?>
-      <p>Add widgets to the sidebar in Appearance > Widgets.</p>
-    <?php endif; ?>
-  </aside>
+  <?php get_sidebar(); // Include the sidebar.php ?>
 
 </div>
 

@@ -168,6 +168,26 @@ function skincare_enqueue_assets() {
         );
     }
 
+    // Enqueue sidebar stylesheet
+    if (file_exists(get_template_directory() . '/dist/css/sidebar.css')) {
+        wp_enqueue_style(
+            'skincare-sidebar-style',
+            get_template_directory_uri() . '/dist/css/sidebar.css',
+            [],
+            filemtime(get_template_directory() . '/dist/css/sidebar.css')
+        );
+    }
+
+    // Enqueue about template stylesheet
+    if (file_exists(get_template_directory() . '/dist/css/template-about.css')) {
+        wp_enqueue_style(
+            'skincare-template-about-style',
+            get_template_directory_uri() . '/dist/css/template-about.css',
+            [],
+            filemtime(get_template_directory() . '/dist/css/template-about.css')
+        );
+    }
+
     // Enqueue main.css as a fallback in case individual files are missing
     if (file_exists(get_template_directory() . '/dist/css/main.css')) {
         wp_enqueue_style(
